@@ -3,6 +3,7 @@
 *A minecraft plugin with advanced web capabilities that works on versions 1.21.4 and up, made by cardrhyme.*
 Note: Currenty, all the features below works, but there may be bugs. Remember: This was a rough outline of how I would want an ideal minecraft plugin with web management abilities to look like.
 Note: The basic theme works perfectly, meanwhile some other teams - especially 'playhosting', a theme inspired by the play.hosting control panel, might have issues with clipping, and the terminal at times. These issues will be fixed within time. And many, many more themes will be added as the next development phases continue!
+![Alt text]("preview (1).jpg")
 # Results of development phase 1:
 ## Features:
 ### 📊 Dashboard & Monitoring
