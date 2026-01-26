@@ -139,92 +139,54 @@ Note: The basic theme works perfectly, meanwhile some other teams - especially '
       3. And many more that I cannot think of at the moment, but will be available and shown in 'Supported integrations with plugins' page that will be integrated in the panel in the future, showing each plugin, obviously the ones that exists on your server first. Each plugin with integration that is on server will be listed as a seperate page in webui panel.
 - [ ] Fix possible security loopholes and issues. (If you find any, please tell.)
 
-# SECURITY
+# PLANNED SECURITY MEASURES FOR FUTURE IMPLEMENATION:
 ### AUTH
-
 - Argon2id or bcrypt
-    
 - Login rate limiting (5 attempts / min per IP)
-    
 - Account lockout after X failures
-    
 
 ### SESSION
-
 - 256-bit random session IDs
-    
 - HttpOnly + Secure
-    
 - Expire after inactivity (30 min)
-    
 - Rotate on privilege change
-    
 - Server-side session store
-    
 
 ### CSRF
-
 - CSRF token in cookie + header
-    
 - Required for POST/PUT/DELETE
-    
 
 ### FILE SYSTEM
-
 - Canonical path check
-    
 - Block symlinks escape
-    
-- Zip extraction path validation
-    
+- Zip extraction path validation 
 - Configurable root jail
-    
-
+  
 ### API
-
 - Rate limiting (IP + session)
-    
 - Request body size limits
-    
 - JSON size limits
-    
 
 ### CONSOLE
-
 - Optional command blacklist:
-    
-    - stop
-        
+    - stop 
     - restart
-        
     - op
-        
     - lp user *  
         (server owner can disable blacklist)
-        
 
 ### LOGS
-
 - Rotate logs
-    
 - Max size
-    
 - Async write
-    
 
 ### TRANSPORT
-
 - Force HTTPS or show red warning banner
     
 
 ### HARDENING
-
 - Security config page:
-    
     - Enable safe mode
-        
     - Disable file manager
-        
     - Disable plugin installer
-        
     - LAN only mode
