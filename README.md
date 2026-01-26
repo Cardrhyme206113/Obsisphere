@@ -1,4 +1,4 @@
-# Obsisphere - Advanced server management web-ui.
+# [Obsisphere](https://cardrhyme206113.github.io/Obsisphere/) - Advanced server management web-ui.
 ### **⚠️ WARNING! This plugin may be susceptible to attacks of many kinds, and it has simple security measures like session-based token system. Only use in secure development environments, DO NOT USE IN PRODUCTION!**
 *A minecraft plugin with advanced web capabilities that works on versions 1.21.4 and up, made by cardrhyme.*
 Note: Currenty, all the features below works, but there may be bugs. Remember: This was a rough outline of how I would want an ideal minecraft plugin with web management abilities to look like.
