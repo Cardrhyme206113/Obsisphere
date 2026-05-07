@@ -5,11 +5,11 @@
 Current status: the core panel, permissions, authentication flow, audit tooling, and major admin pages are already in place. Development Phase 3 is focused on transport hardening, integrations, compatibility expansion, and long-tail polish.
 
 ## Preview Images
-![Preview 1](1.png)
-![Preview 2](2.png)
-![Preview 3](3.png)
-![Preview 4](4.png)
-![Preview 5](5.png)
+![Preview 1](./1.png)
+![Preview 2](./2.png)
+![Preview 3](./3.png)
+![Preview 4](./4.png)
+![Preview 5](./5.png)
 
 ## Development Phase 1 - Core panel
 
