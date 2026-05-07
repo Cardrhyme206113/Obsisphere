@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Download and deployment notes for Obsisphere.">
+    <title>Download Obsisphere | MC Web Panel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="download-page">
+    <div class="noise-layer" aria-hidden="true"></div>
+    <div class="aurora aurora-one" aria-hidden="true"></div>
+
+    <header class="site-header">
+        <a class="brand" href="index.html" aria-label="Obsisphere home">
+            <span class="brand-mark">O</span>
+            <span>
+                <strong>Obsisphere</strong>
+                <small>Download</small>
+            </span>
+        </a>
+        <nav class="nav-links" aria-label="Main navigation">
+            <a href="index.html#features">Features</a>
+            <a href="index.html#timeline">History</a>
+            <a href="index.html#roadmap">Roadmap</a>
+            <a href="download.html">Download</a>
+        </nav>
+        <a class="header-cta" href="../plugin-data/target/mc-web-panel-1.0-SNAPSHOT.jar">Download</a>
+    </header>
+
+    <main>
+        <section class="section-shell download-hero">
+            <div class="reveal">
+                <span class="section-kicker">Download</span>
+                <h1>Install the panel, then treat it like infrastructure.</h1>
+                <p class="hero-lede">
+                    Obsisphere is powerful enough to stop servers, edit files, change inventories, manage users,
+                    and inspect logs. Test first, assign permissions carefully, and deploy behind a network setup you trust.
+                </p>
+                <div class="hero-actions">
+                    <a class="btn btn-primary magnet" href="../plugin-data/target/mc-web-panel-1.0-SNAPSHOT.jar" download>Download</a>
+                </div>
+            </div>
+            <aside class="download-card reveal">
+                <span>Target</span>
+                <strong>Paper / Spigot 1.21.4+</strong>
+                <span>Artifact</span>
+                <strong>mc-web-panel-1.0-SNAPSHOT.jar</strong>
+                <span>Panel</span>
+                <strong>Embedded web UI</strong>
+            </aside>
+        </section>
+
+        <section class="section-shell download-grid">
+            <article class="download-panel reveal">
+                <h2>Recommended install flow</h2>
+                <ol class="install-list">
+                    <li>Build or download the plugin jar.</li>
+                    <li>Place it in your server's <code>plugins</code> folder.</li>
+                    <li>Start the server and watch console output for first-run setup instructions.</li>
+                    <li>Create the master account, register 2FA, and configure roles before inviting other users.</li>
+                    <li>Use the panel on a trusted network first, then harden your public deployment separately.</li>
+                </ol>
+            </article>
+
+            <article class="download-panel warning-panel reveal">
+                <h2>Deployment notes</h2>
+                <p>This is a server administration panel. Anyone with high permissions can affect real server state.</p>
+                <ul class="check-list">
+                    <li>Use strong passwords and 2FA for every important account.</li>
+                    <li>Do not expose the panel publicly without understanding your network and transport setup.</li>
+                    <li>Back up worlds and plugin data before large changes.</li>
+                    <li>Review permissions carefully before giving access to file, console, inventory, or role tools.</li>
+                    <li>Prefer testing on a staging server before using new builds in production.</li>
+                </ul>
+            </article>
+        </section>
+
+        <section class="section-shell release-board reveal">
+            <div>
+                <span class="section-kicker">Build status</span>
+                <h2>Current local project state</h2>
+            </div>
+            <div class="release-items">
+                <span>Core panel implemented</span>
+                <span>Phase 2 expansion implemented</span>
+                <span>Phase 3 roadmap active</span>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <a href="index.html">Back to landing</a>
+        <span>Obsisphere download page</span>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

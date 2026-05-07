@@ -1,474 +1,277 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Obsisphere | Advanced Minecraft Server Management</title>
-    <!-- Fonts -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Obsisphere is an advanced Minecraft server management web panel for Paper and Spigot servers.">
+    <title>Obsisphere | Minecraft Server Control Panel</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
-<link rel="stylesheet" href="/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
-  <!-- Default theme: Constellation (No class needed for default) -->
-  <body>
-    
-    <!-- Background Canvas -->
-    <canvas id="bg-canvas"></canvas>
+<body>
+    <div class="noise-layer" aria-hidden="true"></div>
+    <div class="aurora aurora-one" aria-hidden="true"></div>
+    <div class="aurora aurora-two" aria-hidden="true"></div>
 
-    <!-- Navigation -->
-    <nav class="navbar">
-      <div class="container">
-        <div class="brand" data-target="home" style="cursor: pointer;">
-          <div class="obsidian-logo"></div>
-          <span>Obsisphere</span>
-        </div>
-        
-        <div class="mobile-controls">
-          <div class="theme-switcher">
-            <button class="theme-btn t-constellation active" data-theme="" title="Constellation (Default)"></button>
-            <button class="theme-btn t-playhosting" data-theme="theme-playhosting" title="Classic"></button>
-            <button class="theme-btn t-ferrum" data-theme="theme-ferrum" title="Ferrum"></button>
-          </div>
-          <button class="mobile-menu-btn" aria-label="Toggle Menu">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-          </button>
-        </div>
+    <header class="site-header">
+        <a class="brand" href="#top" aria-label="Obsisphere home">
+            <span class="brand-mark">O</span>
+            <span>
+                <strong>Obsisphere</strong>
+                <small>MC Web Panel</small>
+            </span>
+        </a>
+        <nav class="nav-links" aria-label="Main navigation">
+            <a href="#features">Features</a>
+            <a href="#gallery">Preview</a>
+            <a href="#timeline">History</a>
+            <a href="#roadmap">Roadmap</a>
+            <a href="download.html">Download</a>
+        </nav>
+        <a class="header-cta" href="download.html">Get the plugin</a>
+    </header>
 
-        <div class="nav-links" id="nav-menu">
-          <a href="#" class="nav-item active" data-target="home">Home</a>
-          <a href="#" class="nav-item" data-target="features">Features</a>
-          <a href="#" class="nav-item" data-target="previews">Previews</a>
-          <a href="#" class="nav-item" data-target="changelog">Changelog</a>
-          <a href="#" class="nav-item" data-target="roadmap">Future Plans</a>
-          <a href="#" class="nav-item" data-target="download" style="color: var(--accent);">Get Plugin</a>
-        </div>
-      </div>
-    </nav>
-
-    <!-- Main Content Area -->
-    <main id="app-content">
-
-      <!-- VIEW: HOME -->
-      <div id="view-home" class="view-section active">
-        <!-- Hero Section -->
-        <section class="hero-section scroll-reveal">
-          <div class="container">
-            <span class="badge badge-warning" style="margin-bottom: 20px;">Early Beta v0.04</span>
-            
-            <h1 class="hero-title">Advanced Server Management<br>Web-UI for Minecraft</h1>
-            
-            <!-- Relocated Warning -->
-            <div class="inline-warning danger-glow">
-              <span style="font-size: 1.2em; vertical-align: middle;">⚠️</span> <strong>WARNING:</strong> This plugin is not secure for production environment!<br>
-              <span>Only use in secure LAN environments or private servers with trusted friends.</span>
+    <main id="top">
+        <section class="hero section-shell">
+            <div class="hero-copy reveal">
+                <div class="eyebrow">
+                    <span class="pulse-dot"></span>
+                    Embedded control panel for Paper / Spigot 1.21.4+
+                </div>
+                <h1>Run your Minecraft server like a mission control room.</h1>
+                <p class="hero-lede">
+                    Obsisphere brings dashboard monitoring, file management, permissions, live player tools,
+                    logs, maps, inventories, and security controls into one fast web UI built directly into the server.
+                </p>
+                <div class="hero-actions">
+                    <a class="btn btn-primary magnet" href="download.html">Download</a>
+                    <a class="btn btn-ghost magnet" href="#features">Explore features</a>
+                </div>
+                <div class="hero-metrics" aria-label="Product highlights">
+                    <div><strong>2FA</strong><span>Panel onboarding</span></div>
+                    <div><strong>RBAC</strong><span>Per-feature permissions</span></div>
+                    <div><strong>Live</strong><span>Console, map, stats</span></div>
+                </div>
             </div>
 
-            <p class="hero-subtitle">
-              Compatible with versions 1.21.4+. Full control over your server with Dashboard, File Manager, Live Map, and more. 
-              Experience the power of <strong>Obsisphere</strong>.
-            </p>
-
-            <div class="hero-buttons">
-              <button class="btn btn-primary nav-trigger" data-target="download">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2 2H5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                Download v0.04
-              </button>
-              <button class="btn btn-outline nav-trigger" data-target="features">
-                Explore Features
-              </button>
-            </div>
-          </div>
-        </section>
-      </div>
-
-      <!-- VIEW: FEATURES -->
-      <div id="view-features" class="view-section">
-        <section class="section">
-          <div class="container">
-            <div class="scroll-reveal" style="text-align: center; margin-bottom: 60px;">
-              <h2 style="font-size: 32px; font-weight: 700; margin-bottom: 10px;">Key Features</h2>
-              <p style="color: var(--text-secondary);">Everything you need to manage your server effectively.</p>
-            </div>
-            
-            <div class="features-grid">
-              <!-- Dashboard -->
-              <div class="feature-card scroll-reveal">
-                <div class="feature-header">
-                  <div class="feature-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
-                  </div>
-                  <div class="feature-title">Dashboard & Monitoring</div>
-                </div>
-                <ul class="feature-list">
-                  <li>Real-time Graphs (Memory, CPU, TPS)</li>
-                  <li>Live Performance Stats (MSPT, Chunks)</li>
-                  <li>Server Control (Stop/Start)</li>
-                  <li>Copyable Server IP & MOTD</li>
-                </ul>
-              </div>
-
-              <!-- File Manager -->
-              <div class="feature-card scroll-reveal">
-                <div class="feature-header">
-                  <div class="feature-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-                  </div>
-                  <div class="feature-title">File Manager</div>
-                </div>
-                <ul class="feature-list">
-                  <li>Full Browser (Create, Upload, Edit, Delete)</li>
-                  <li>In-browser Code Editor</li>
-                  <li>Bulk Actions (Zip/Unzip, Move, Copy)</li>
-                  <li>Media Preview (Images/Video)</li>
-                </ul>
-              </div>
-
-              <!-- Player Management -->
-              <div class="feature-card scroll-reveal">
-                <div class="feature-header">
-                  <div class="feature-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                  </div>
-                  <div class="feature-title">Player Management</div>
-                </div>
-                <ul class="feature-list">
-                  <li>Kick, Ban, Tempban</li>
-                  <li>Whitelist Management</li>
-                  <li>Inventory Inspection (Offline/Online)</li>
-                  <li>Equipment Slots & Ender Chest</li>
-                </ul>
-              </div>
-
-              <!-- World Management -->
-              <div class="feature-card scroll-reveal">
-                <div class="feature-header">
-                  <div class="feature-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"/></svg>
-                  </div>
-                  <div class="feature-title">World & Live Map</div>
-                </div>
-                <ul class="feature-list">
-                  <li>Real-time Top-down Map</li>
-                  <li>Player Tracking</li>
-                  <li>Backup & Restore System</li>
-                  <li>World Settings (Time, Weather)</li>
-                </ul>
-              </div>
-
-              <!-- Console & Logs -->
-              <div class="feature-card scroll-reveal">
-                <div class="feature-header">
-                  <div class="feature-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
-                  </div>
-                  <div class="feature-title">Console & Logs</div>
-                </div>
-                <ul class="feature-list">
-                  <li>Live Console Stream (ANSI Colors)</li>
-                  <li>Command Input</li>
-                  <li>Detailed Activity & Audit Logs</li>
-                  <li>X-Ray Watch (Anti-Cheat Analysis)</li>
-                </ul>
-              </div>
-
-              <!-- Plugins & Themes -->
-              <div class="feature-card scroll-reveal">
-                <div class="feature-header">
-                  <div class="feature-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.1 4-1 4-1s.38 2.38-1 4z"/><path d="M15 13v5s3.03-.55 4-2c1.1-1.62 1-4 1-4s-2.38-.38-4 1z"/></svg>
-                  </div>
-                  <div class="feature-title">Plugins & Themes</div>
-                </div>
-                <ul class="feature-list">
-                  <li>Plugin Manager (Enable/Disable/Delete)</li>
-                  <li>Spigot Resource Browser</li>
-                  <li>Advanced Theme Editor (CSS Variables)</li>
-                  <li>Presets (Stellar, Ferrum, etc.)</li>
-                </ul>
-              </div>
-            </div>
-
-            <!-- FAQ Section -->
-            <div class="faq-container scroll-reveal" style="margin-top: 80px; max-width: 800px; margin-left: auto; margin-right: auto;">
-                <div style="text-align: center; margin-bottom: 40px;">
-                    <h3 style="font-size: 24px; font-weight: 700;">Common Questions</h3>
-                </div>
-                
-                <div class="faq-item">
-                    <button class="faq-question">Does Obsisphere support Geyser (Bedrock)?</button>
-                    <div class="faq-answer">
-                        <p>Yes! Since Obsisphere connects via the standard plugin API, it works seamlessly alongside Geyser and Floodgate.</p>
+            <div class="hero-visual reveal" aria-label="Obsisphere product preview">
+                <div class="panel-frame tilt-card">
+                    <div class="panel-topbar">
+                        <span></span><span></span><span></span>
+                        <strong>Dashboard / Live Ops</strong>
+                    </div>
+                    <div class="panel-grid">
+                        <div class="stat-card wide">
+                            <span>TPS</span>
+                            <strong>19.99</strong>
+                            <i></i>
+                        </div>
+                        <div class="stat-card">
+                            <span>MSPT</span>
+                            <strong>7.2 ms</strong>
+                            <i></i>
+                        </div>
+                        <div class="stat-card">
+                            <span>Players</span>
+                            <strong>14 / 80</strong>
+                            <i></i>
+                        </div>
+                        <div class="console-preview">
+                            <b>System Console</b>
+                            <code>[INFO] Web Panel started on port 8085</code>
+                            <code>[AUDIT] Admin updated role permissions</code>
+                            <code>[LIVE] Player activity snapshot synced</code>
+                        </div>
                     </div>
                 </div>
-                
-                <div class="faq-item">
-                    <button class="faq-question">Do I need to open extra ports?</button>
-                    <div class="faq-answer">
-                        <p>Obsisphere runs on its own port (default 8080). You only need to forward that single port to access the panel from outside your network.</p>
+                <div class="orbit-card orbit-a">Audit trails</div>
+                <div class="orbit-card orbit-b">Live map</div>
+                <div class="orbit-card orbit-c">Inventory edit</div>
+            </div>
+        </section>
+
+        <section class="section-shell logo-strip reveal" aria-label="Core capability groups">
+            <span>Monitor</span>
+            <span>Moderate</span>
+            <span>Automate</span>
+            <span>Secure</span>
+            <span>Translate</span>
+            <span>Customize</span>
+        </section>
+
+        <section class="section-shell demo-showcase">
+            <div class="section-heading reveal">
+                <span class="section-kicker">Live workflows</span>
+                <h2>The polished tools are where the panel starts to feel fast.</h2>
+                <p>These mini demos highlight the kind of admin moments Obsisphere is built for: inspecting player data, making quick changes, and keeping access under control without leaving the browser.</p>
+            </div>
+            <div class="demo-grid demo-grid-single">
+                <article class="workflow-demo permissions-demo reveal" aria-label="Permissions workflow demo">
+                    <div class="demo-header">
+                        <span>User Access</span>
+                        <strong>Role permissions</strong>
                     </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">Does it work on modded servers (Forge/Fabric)?</button>
-                    <div class="faq-answer">
-                        <p>Currently, Obsisphere is designed for Spigot/Paper/Bukkit derivatives. Forge and Fabric support is planned for a future release.</p>
+                    <div class="permissions-stage demo-stage-card">
+                        <div class="demo-window-bar">
+                            <span></span><span></span><span></span>
+                            <b>Users / Roles / Command Policy</b>
+                        </div>
+                        <div class="role-list">
+                            <span class="active">Moderator</span>
+                            <span>Builder</span>
+                            <span>Observer</span>
+                        </div>
+                        <div class="permission-sheet">
+                            <div class="perm-row enabled"><i></i><span>View Players</span></div>
+                            <div class="perm-row enabled"><i></i><span>Kick Players</span></div>
+                            <div class="perm-row warning"><i></i><span>Console command policy</span></div>
+                            <div class="perm-policy">
+                                <b>Whitelist mode</b>
+                                <code>/say *</code>
+                                <code>/tp *</code>
+                            </div>
+                        </div>
+                        <div class="demo-cursor permission-cursor"></div>
                     </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="features" class="section-shell">
+            <div class="section-heading reveal">
+                <span class="section-kicker">Current capabilities</span>
+                <h2>Everything an admin reaches for, without tab-hopping.</h2>
+                <p>Server monitoring, moderation, file work, permissions, logs, and live tools live in one place, with enough control to separate casual helpers from trusted staff.</p>
+            </div>
+            <div class="feature-grid">
+                <article class="feature-card reveal">
+                    <span class="feature-icon">01</span>
+                    <h3>Realtime server dashboard</h3>
+                    <p>Memory, CPU, players, TPS, MSPT, loaded chunks, entities, server info, uptime, MOTD, and stop controls.</p>
+                </article>
+                <article class="feature-card reveal">
+                    <span class="feature-icon">02</span>
+                    <h3>Full file manager</h3>
+                    <p>Create, upload, edit, preview, rename, move, copy, delete, zip, download, archive, and extract server files from the browser.</p>
+                </article>
+                <article class="feature-card reveal">
+                    <span class="feature-icon">03</span>
+                    <h3>Players, bans, ops, whitelist</h3>
+                    <p>Moderation tools for online and known players, dedicated ban list, pardon actions, whitelist control, and operator management.</p>
+                </article>
+                <article class="feature-card reveal">
+                    <span class="feature-icon">04</span>
+                    <h3>Live map and inventory tools</h3>
+                    <p>Track players, inspect activity, view coordinates and vitals, and edit online or offline player inventories.</p>
+                </article>
+                <article class="feature-card reveal">
+                    <span class="feature-icon">05</span>
+                    <h3>Roles, users, and 2FA</h3>
+                    <p>Master bootstrap, TOTP setup, forced onboarding, role inheritance, direct permissions, presence, and account settings.</p>
+                </article>
+                <article class="feature-card reveal">
+                    <span class="feature-icon">06</span>
+                    <h3>Logs and audit trails</h3>
+                    <p>Activity logs, audit logs, failed authentication review, player movement and interaction snapshots, and panel notifications.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="gallery" class="section-shell gallery-section">
+            <div class="section-heading reveal">
+                <span class="section-kicker">Preview gallery</span>
+                <h2>See the panel before you install it.</h2>
+                <p>A quick look at the dashboards, management pages, live tools, and theme work included with Obsisphere.</p>
+            </div>
+            <div class="shot-rail reveal">
+                <button class="shot-nav" type="button" data-shot-prev aria-label="Previous screenshot">&lsaquo;</button>
+                <figure class="shot-frame">
+                    <img data-shot-image src="1.jpg" alt="Obsisphere product screenshot preview">
+                    <figcaption>
+                        <strong data-shot-title>Dashboard, console, and server control</strong>
+                        <span data-shot-caption>Realtime status cards, graphs, and the admin console in one view.</span>
+                    </figcaption>
+                </figure>
+                <button class="shot-nav" type="button" data-shot-next aria-label="Next screenshot">&rsaquo;</button>
+            </div>
+            <div class="shot-dots" aria-label="Screenshot selector">
+                <button type="button" class="active" data-shot-dot="0">1</button>
+                <button type="button" data-shot-dot="1">2</button>
+                <button type="button" data-shot-dot="2">3</button>
+                <button type="button" data-shot-dot="3">4</button>
+                <button type="button" data-shot-dot="4">5</button>
+            </div>
+        </section>
+
+        <section id="timeline" class="section-shell split-section">
+            <div class="section-heading sticky-heading reveal">
+                <span class="section-kicker">Feature history</span>
+                <h2>From core panel to serious admin suite.</h2>
+                <p>Obsisphere started as a control panel and grew into a full admin workspace with account security, detailed roles, logs, and live server tools.</p>
+            </div>
+            <div class="timeline">
+                <article class="timeline-item reveal">
+                    <span>Phase 1</span>
+                    <h3>Core panel foundation</h3>
+                    <p>Dashboard, file manager, players, plugins, worlds, live map, inventory, scheduler, x-ray watch, console, logs, themes, and responsive layout.</p>
+                </article>
+                <article class="timeline-item reveal">
+                    <span>Phase 2</span>
+                    <h3>Security, permissions, and depth</h3>
+                    <p>2FA onboarding, users and roles, command policies, database-backed logs, failed-auth tooling, LAN-only mode, i18n, and PlayHosting theme polish.</p>
+                </article>
+                <article class="timeline-item reveal">
+                    <span>Phase 3</span>
+                    <h3>Integrations and hardening</h3>
+                    <p>Planned work includes deeper deployment hardening, remote file access, broader version support, and plugin integrations.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="roadmap" class="section-shell roadmap">
+            <div class="section-heading reveal">
+                <span class="section-kicker">To be implemented</span>
+                <h2>The next layer is ecosystem power.</h2>
+            </div>
+            <div class="roadmap-grid">
+                <div class="roadmap-card reveal"><b>Deployment hardening</b><span>More protection around public deployments, request flow, file boundaries, and HTTPS-oriented setups.</span></div>
+                <div class="roadmap-card reveal"><b>Remote access</b><span>SSH and SFTP support for teams that need deeper server access from the panel.</span></div>
+                <div class="roadmap-card reveal"><b>Compatibility</b><span>Broader server-version support, with older releases like 1.16.5 as a target floor.</span></div>
+                <div class="roadmap-card reveal"><b>Integrations</b><span>WorldGuard map/claim controls, LuckPerms shortcuts, and a broader supported-integrations system.</span></div>
+                <div class="roadmap-card reveal"><b>Public API</b><span>A documented control-panel API for custom third-party frontends.</span></div>
+                <div class="roadmap-card reveal"><b>UI polish</b><span>More themes, deeper variable coverage, and QA across unusual screen sizes and high-load scenarios.</span></div>
+            </div>
+        </section>
+
+        <section class="section-shell developer-card reveal">
+            <div>
+                <span class="section-kicker">Developer</span>
+                <h2>Built for people who actually run servers.</h2>
+                <p>Obsisphere focuses on the work admins do every day: checking health, finding problems, handling players, reviewing logs, and keeping access under control.</p>
+            </div>
+            <div class="dev-profile">
+                <img src="https://mc-heads.net/avatar/_Card/128" alt="_Card Minecraft head">
+                <div>
+                    <strong>_Card</strong>
+                    <span>Developer</span>
                 </div>
             </div>
-
-          </div>
         </section>
-      </div>
 
-      <!-- VIEW: PREVIEWS -->
-      <div id="view-previews" class="view-section">
-        <section class="section">
-          <div class="container">
-            <div class="scroll-reveal" style="text-align: center; margin-bottom: 40px;">
-              <h2 style="font-size: 32px; font-weight: 700; margin-bottom: 10px;">Interface Gallery</h2>
-              <p style="color: var(--text-secondary);">See Obsisphere in action.</p>
-            </div>
-
-            <!-- Standard Video Player -->
-            <div class="hero-video-wrapper scroll-reveal" style="margin-bottom: 60px;">
-               <video controls poster="media/preview1_page-0001.jpg" style="width: 100%; height: 100%; object-fit: cover;">
-                  <source src="media/preview.mp4" type="video/mp4">
-                  Your browser does not support the video tag.
-               </video>
-               
-              <p style="margin-top: 15px; font-size: 13px; color: var(--text-secondary); text-align: center;">*Video preview covers all features.</p>
-            </div>
-
-            <!-- UI Gallery Grid -->
-            <h3 class="scroll-reveal" style="text-align: center; margin-bottom: 30px; font-weight: 700;">Screenshots</h3>
-            <div class="features-grid" style="grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));">
-                <img class="lightbox-trigger scroll-reveal" src="media/preview1_page-0001.jpg" alt="Dashboard View">
-                <img class="lightbox-trigger scroll-reveal" src="media/preview2_page-0001.jpg" alt="File Manager">
-                <img class="lightbox-trigger scroll-reveal" src="media/preview3_page-0001.jpg" alt="Player Manager">
-                <img class="lightbox-trigger scroll-reveal" src="media/preview4_page-0001.jpg" alt="Console View">
-                <img class="lightbox-trigger scroll-reveal" src="media/preview5_page-0001.jpg" alt="Settings Panel">
-                <img class="lightbox-trigger scroll-reveal" src="media/preview6_page-0001.jpg" alt="Map View">
-                <img class="lightbox-trigger scroll-reveal" src="media/preview7_page-0001.jpg" alt="Plugin Manager">
-                <img class="lightbox-trigger scroll-reveal" src="media/preview8_page-0001.jpg" alt="Editor">
-                <img class="lightbox-trigger scroll-reveal" src="media/preview9_page-0001.jpg" alt="Login Screen">
-            </div>
-          </div>
+        <section class="section-shell final-cta reveal">
+            <h2>Ready to try Obsisphere?</h2>
+            <p>Download the plugin, read the deployment notes, and run it on a test server before trusting it with production infrastructure.</p>
+            <a class="btn btn-primary magnet" href="download.html">Download</a>
         </section>
-      </div>
-
-      <!-- VIEW: CHANGELOG -->
-      <div id="view-changelog" class="view-section">
-        <section class="section">
-          <div class="container">
-            <div class="scroll-reveal" style="text-align: center; margin-bottom: 60px;">
-              <h2 style="font-size: 32px; font-weight: 700; margin-bottom: 10px;">Changelog</h2>
-              <p style="color: var(--text-secondary);">History of development.</p>
-            </div>
-
-            <div class="roadmap-list" style="max-width: 800px; margin: 0 auto;">
-               
-               <!-- v0.04 Entry -->
-               <div class="scroll-reveal" style="margin-bottom: 40px; border-left: 2px solid var(--accent); padding-left: 24px;">
-                 <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
-                   <span class="badge" style="background:var(--accent); color:white;">v0.04</span>
-                   <span style="color:var(--text-secondary); font-size:14px; font-weight: 600;">Current Release (Early Beta)</span>
-                 </div>
-                 <h3 style="font-size:18px; margin-bottom:8px; color:var(--text-primary);">The Resources Update</h3>
-                 <p style="color:var(--text-secondary); font-size: 14px; margin-bottom: 12px;">This update brings the power of SpigotMC directly into the panel.</p>
-                 <ul class="feature-list">
-                    <li><strong>Resource Browser:</strong> Added ability to search, view details, and download plugins from Spigot directly within the web UI.</li>
-                    <li><strong>Polish:</strong> General UI improvements and bug fixes.</li>
-                 </ul>
-               </div>
-
-               <!-- v0.03 Entry -->
-               <div class="scroll-reveal" style="margin-bottom: 40px; border-left: 2px solid var(--border); padding-left: 24px;">
-                 <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
-                   <span class="badge" style="background:var(--bg-panel); color:var(--text-secondary); border: 1px solid var(--border);">v0.03</span>
-                 </div>
-                 <h3 style="font-size:18px; margin-bottom:8px; color:var(--text-primary);">The Visuals Overhaul</h3>
-                 <p style="color:var(--text-secondary); font-size: 14px; margin-bottom: 12px;">Major upgrades to the File Manager and Map renderer.</p>
-                 <ul class="feature-list">
-                    <li><strong>Advanced File Manager:</strong> Added Zip/Unzip, Create File/Folder, Upload File/Folder functionality.</li>
-                    <li><strong>Map 2.0:</strong> Rewrote map renderer. Now 2D with ambience/height occlusion, correct textures, and player listing.</li>
-                    <li><strong>Multi-world:</strong> Added support for rendering and selecting different worlds in the live map.</li>
-                 </ul>
-               </div>
-
-               <!-- v0.02 Entry -->
-               <div class="scroll-reveal" style="margin-bottom: 40px; border-left: 2px solid var(--border); padding-left: 24px;">
-                 <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
-                   <span class="badge" style="background:var(--bg-panel); color:var(--text-secondary); border: 1px solid var(--border);">v0.02</span>
-                 </div>
-                 <h3 style="font-size:18px; margin-bottom:8px; color:var(--text-primary);">The Plugin Migration</h3>
-                 <p style="color:var(--text-secondary); font-size: 14px; margin-bottom: 12px;">Transitioned project to a standalone Bukkit/Spigot plugin.</p>
-                 <ul class="feature-list">
-                    <li><strong>Architecture:</strong> Re-packaged as a standalone .jar plugin.</li>
-                    <li><strong>Basic Tools:</strong> Added simple File Manager (Read/Edit only), User List, and Plugin Disabling.</li>
-                    <li><strong>World Manager:</strong> Added basic backup functionality.</li>
-                    <li><strong>Primitive Map:</strong> Added experimental map (Single pixel chunks, color approximations).</li>
-                 </ul>
-               </div>
-
-               <!-- v0.01 Entry -->
-               <div class="scroll-reveal" style="margin-bottom: 40px; border-left: 2px solid var(--border); padding-left: 24px;">
-                 <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
-                   <span class="badge" style="background:var(--bg-panel); color:var(--text-secondary); border: 1px solid var(--border);">v0.01</span>
-                 </div>
-                 <h3 style="font-size:18px; margin-bottom:8px; color:var(--text-primary);">Genesis</h3>
-                 <ul class="feature-list">
-                    <li><strong>Core:</strong> Initial Web UI release.</li>
-                    <li><strong>Security:</strong> Implemented session-token based authentication system.</li>
-                    <li><strong>Monitoring:</strong> Basic Dashboard and WebSocket Console with ANSI color support.</li>
-                 </ul>
-               </div>
-
-            </div>
-          </div>
-        </section>
-      </div>
-
-      <!-- VIEW: ROADMAP -->
-      <div id="view-roadmap" class="view-section">
-        <section class="section">
-          <div class="container">
-            <div class="scroll-reveal" style="text-align: center; margin-bottom: 60px;">
-              <h2 style="font-size: 32px; font-weight: 700; margin-bottom: 20px;">Future Plans</h2>
-              <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto;">
-                Development Phase 2 is outlined below. We are committed to expanding Obsisphere with advanced networking and integration features.
-              </p>
-            </div>
-
-            <div class="roadmap-list">
-               <!-- Roadmap Items -->
-               <div class="roadmap-item scroll-reveal">
-                 <div class="roadmap-checkbox"></div>
-                 <div class="roadmap-content">
-                   <h4>Protocol Unification (HTTP/SSH/SFTP)</h4>
-                   <p>Allowing all protocols to work from a single port by checking initial request bytes.</p>
-                 </div>
-               </div>
-               
-               <div class="roadmap-item scroll-reveal">
-                 <div class="roadmap-checkbox"></div>
-                 <div class="roadmap-content">
-                   <h4>Advanced API & Permissions</h4>
-                   <p>Custom control panel API for external integration and granular permission system for admin/user roles.</p>
-                 </div>
-               </div>
-
-               <div class="roadmap-item scroll-reveal">
-                 <div class="roadmap-checkbox"></div>
-                 <div class="roadmap-content">
-                   <h4>Plugin Integrations</h4>
-                   <p>Deep support for WorldGuard (Region mapping), LuckPerms (Web Editor), and more.</p>
-                 </div>
-               </div>
-
-               <div class="roadmap-item scroll-reveal">
-                 <div class="roadmap-checkbox"></div>
-                 <div class="roadmap-content">
-                   <h4>Legacy Support</h4>
-                   <p>Backwards compatibility for Minecraft versions down to 1.16.5.</p>
-                 </div>
-               </div>
-
-               <div class="roadmap-item scroll-reveal">
-                 <div class="roadmap-checkbox"></div>
-                 <div class="roadmap-content">
-                   <h4>Optimization</h4>
-                   <p>Improving Live Map performance and reducing Audit Log storage footprint.</p>
-                 </div>
-               </div>
-            </div>
-          </div>
-        </section>
-      </div>
-
-      <!-- VIEW: DOWNLOAD -->
-      <div id="view-download" class="view-section">
-        <section class="section" style="text-align: center; padding: 100px 0;">
-          <div class="container">
-             <div class="scroll-reveal" style="font-size: 64px; margin-bottom: 20px;">📦</div>
-             <h2 class="scroll-reveal" style="font-size: 32px; font-weight: 700; margin-bottom: 20px;">Download Obsisphere</h2>
-             <p class="scroll-reveal" style="color: var(--text-secondary); margin-bottom: 20px;">Current Version: v0.04 (Beta)</p>
-             <p class="scroll-reveal" style="color: var(--warning); font-size: 13px; font-weight: 600; margin-bottom: 40px; background: rgba(245, 158, 11, 0.1); display: inline-block; padding: 4px 12px; border-radius: 99px;">⚠️ Early Beta Build - Works, but expect bugs.</p>
-
-             <div class="download-container scroll-reveal">
-               <div class="download-box">
-                  <p class="compatibility-text">
-                    <strong>Supported Platforms (1.21.4+):</strong><br>
-                    Paper, Spigot, Bukkit, Pufferfish, Purpur, and any other server software that supports the Bukkit plugin API.
-                  </p>
-                  
-                  <button class="btn btn-primary" style="width: 100%; margin: 20px 0;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                    Download .jar
-                  </button>
-
-                  <div class="warning-box" style="flex-direction: row; align-items: center; gap: 12px; justify-content: center;">
-                     <span style="font-size: 24px;">⚠️</span>
-                     <span style="text-align: left;"><strong>WARNING:</strong> This plugin is not secure for production environments! Only use in secure LAN environments or private servers with trusted friends.</span>
-                  </div>
-               </div>
-
-               <!-- Installation Guide -->
-               <div class="install-guide">
-                  <h3 style="font-size: 16px; margin-bottom: 12px; color: var(--text-primary); border-top: 1px solid var(--border); padding-top: 20px;">Installation Guide</h3>
-                  <ol class="install-steps">
-                    <li>Stop your Minecraft server.</li>
-                    <li>Drop the <code>Obsisphere-0.04.jar</code> into your server's <code>/plugins</code> folder.</li>
-                    <li>Start the server. No extra configuration is required.</li>
-                    <li>Check the server console for the generated access URL and login token.</li>
-                  </ol>
-               </div>
-             </div>
-          </div>
-        </section>
-      </div>
-
     </main>
 
-    <!-- Footer / Dev Info -->
     <footer class="site-footer">
-      <div class="container">
-        <div class="dev-profile">
-          <img src="https://minotar.net/helm/_Card/64.png" alt="Cardrhyme" class="dev-pfp">
-          <div class="dev-info">
-            <h3>Cardrhyme</h3>
-            <p style="color: var(--accent); margin-bottom: 2px;">Lead Developer</p>
-            <p style="font-size: 12px; opacity: 0.8;">Discord: <strong>cardrhyme</strong> (Friend requests accepted periodically)</p>
-          </div>
-        </div>
-        
-        <div style="border-top: 1px solid var(--border); padding-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
-          <p style="color: var(--text-secondary); font-size: 13px;">&copy; 2026 Obsisphere Project. All rights reserved.</p>
-          <div style="display: flex; gap: 20px;">
-            <a href="https://github.com/Cardrhyme206113/Obsisphere" style="color: var(--text-secondary);">GitHub</a>
-          </div>
-        </div>
-        
-        <p style="margin-top: 20px; font-size: 11px; color: var(--text-secondary); opacity: 0.6;">
-          Minecraft is a trademark of Mojang Synergies AB. Obsisphere is not affiliated with Mojang.
-        </p>
-      </div>
+        <span>Obsisphere</span>
+        <a href="download.html">Download</a>
     </footer>
 
-    <!-- LIGHTBOX MODAL -->
-    <div id="lightbox" class="lightbox">
-      <button class="lightbox-close">&times;</button>
-      <img id="lightbox-img" src="" alt="Full Preview">
-    </div>
-
-    <!-- SCROLL TOP BTN (MOBILE) -->
-    <button id="scroll-top-btn" aria-label="Scroll to top">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
-    </button>
-
-  <script type="module" src="/index.tsx"></script>
+    <script src="script.js"></script>
 </body>
 </html>
