@@ -1,277 +1,45 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Obsisphere is an advanced Minecraft server management web panel for Paper and Spigot servers.">
-    <title>Obsisphere | Minecraft Server Control Panel</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Obsisphere V2 is an embedded Minecraft server management panel for Paper and Spigot servers, with live monitoring, players, files, plugins, worlds, backups, inventory tools, audit logs, roles, 2FA and a WebGL map.">
+<title>Obsisphere V2 — Minecraft Server Management Panel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@600;700;800&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="noise-layer" aria-hidden="true"></div>
-    <div class="aurora aurora-one" aria-hidden="true"></div>
-    <div class="aurora aurora-two" aria-hidden="true"></div>
-
-    <header class="site-header">
-        <a class="brand" href="#top" aria-label="Obsisphere home">
-            <span class="brand-mark">O</span>
-            <span>
-                <strong>Obsisphere</strong>
-                <small>MC Web Panel</small>
-            </span>
-        </a>
-        <nav class="nav-links" aria-label="Main navigation">
-            <a href="#features">Features</a>
-            <a href="#gallery">Preview</a>
-            <a href="#timeline">History</a>
-            <a href="#roadmap">Roadmap</a>
-            <a href="download.html">Download</a>
-        </nav>
-        <a class="header-cta" href="download.html">Get the plugin</a>
-    </header>
-
-    <main id="top">
-        <section class="hero section-shell">
-            <div class="hero-copy reveal">
-                <div class="eyebrow">
-                    <span class="pulse-dot"></span>
-                    Embedded control panel for Paper / Spigot 1.21.4+
-                </div>
-                <h1>Run your Minecraft server like a mission control room.</h1>
-                <p class="hero-lede">
-                    Obsisphere brings dashboard monitoring, file management, permissions, live player tools,
-                    logs, maps, inventories, and security controls into one fast web UI built directly into the server.
-                </p>
-                <div class="hero-actions">
-                    <a class="btn btn-primary magnet" href="download.html">Download</a>
-                    <a class="btn btn-ghost magnet" href="#features">Explore features</a>
-                </div>
-                <div class="hero-metrics" aria-label="Product highlights">
-                    <div><strong>2FA</strong><span>Panel onboarding</span></div>
-                    <div><strong>RBAC</strong><span>Per-feature permissions</span></div>
-                    <div><strong>Live</strong><span>Console, map, stats</span></div>
-                </div>
-            </div>
-
-            <div class="hero-visual reveal" aria-label="Obsisphere product preview">
-                <div class="panel-frame tilt-card">
-                    <div class="panel-topbar">
-                        <span></span><span></span><span></span>
-                        <strong>Dashboard / Live Ops</strong>
-                    </div>
-                    <div class="panel-grid">
-                        <div class="stat-card wide">
-                            <span>TPS</span>
-                            <strong>19.99</strong>
-                            <i></i>
-                        </div>
-                        <div class="stat-card">
-                            <span>MSPT</span>
-                            <strong>7.2 ms</strong>
-                            <i></i>
-                        </div>
-                        <div class="stat-card">
-                            <span>Players</span>
-                            <strong>14 / 80</strong>
-                            <i></i>
-                        </div>
-                        <div class="console-preview">
-                            <b>System Console</b>
-                            <code>[INFO] Web Panel started on port 8085</code>
-                            <code>[AUDIT] Admin updated role permissions</code>
-                            <code>[LIVE] Player activity snapshot synced</code>
-                        </div>
-                    </div>
-                </div>
-                <div class="orbit-card orbit-a">Audit trails</div>
-                <div class="orbit-card orbit-b">Live map</div>
-                <div class="orbit-card orbit-c">Inventory edit</div>
-            </div>
-        </section>
-
-        <section class="section-shell logo-strip reveal" aria-label="Core capability groups">
-            <span>Monitor</span>
-            <span>Moderate</span>
-            <span>Automate</span>
-            <span>Secure</span>
-            <span>Translate</span>
-            <span>Customize</span>
-        </section>
-
-        <section class="section-shell demo-showcase">
-            <div class="section-heading reveal">
-                <span class="section-kicker">Live workflows</span>
-                <h2>The polished tools are where the panel starts to feel fast.</h2>
-                <p>These mini demos highlight the kind of admin moments Obsisphere is built for: inspecting player data, making quick changes, and keeping access under control without leaving the browser.</p>
-            </div>
-            <div class="demo-grid demo-grid-single">
-                <article class="workflow-demo permissions-demo reveal" aria-label="Permissions workflow demo">
-                    <div class="demo-header">
-                        <span>User Access</span>
-                        <strong>Role permissions</strong>
-                    </div>
-                    <div class="permissions-stage demo-stage-card">
-                        <div class="demo-window-bar">
-                            <span></span><span></span><span></span>
-                            <b>Users / Roles / Command Policy</b>
-                        </div>
-                        <div class="role-list">
-                            <span class="active">Moderator</span>
-                            <span>Builder</span>
-                            <span>Observer</span>
-                        </div>
-                        <div class="permission-sheet">
-                            <div class="perm-row enabled"><i></i><span>View Players</span></div>
-                            <div class="perm-row enabled"><i></i><span>Kick Players</span></div>
-                            <div class="perm-row warning"><i></i><span>Console command policy</span></div>
-                            <div class="perm-policy">
-                                <b>Whitelist mode</b>
-                                <code>/say *</code>
-                                <code>/tp *</code>
-                            </div>
-                        </div>
-                        <div class="demo-cursor permission-cursor"></div>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <section id="features" class="section-shell">
-            <div class="section-heading reveal">
-                <span class="section-kicker">Current capabilities</span>
-                <h2>Everything an admin reaches for, without tab-hopping.</h2>
-                <p>Server monitoring, moderation, file work, permissions, logs, and live tools live in one place, with enough control to separate casual helpers from trusted staff.</p>
-            </div>
-            <div class="feature-grid">
-                <article class="feature-card reveal">
-                    <span class="feature-icon">01</span>
-                    <h3>Realtime server dashboard</h3>
-                    <p>Memory, CPU, players, TPS, MSPT, loaded chunks, entities, server info, uptime, MOTD, and stop controls.</p>
-                </article>
-                <article class="feature-card reveal">
-                    <span class="feature-icon">02</span>
-                    <h3>Full file manager</h3>
-                    <p>Create, upload, edit, preview, rename, move, copy, delete, zip, download, archive, and extract server files from the browser.</p>
-                </article>
-                <article class="feature-card reveal">
-                    <span class="feature-icon">03</span>
-                    <h3>Players, bans, ops, whitelist</h3>
-                    <p>Moderation tools for online and known players, dedicated ban list, pardon actions, whitelist control, and operator management.</p>
-                </article>
-                <article class="feature-card reveal">
-                    <span class="feature-icon">04</span>
-                    <h3>Live map and inventory tools</h3>
-                    <p>Track players, inspect activity, view coordinates and vitals, and edit online or offline player inventories.</p>
-                </article>
-                <article class="feature-card reveal">
-                    <span class="feature-icon">05</span>
-                    <h3>Roles, users, and 2FA</h3>
-                    <p>Master bootstrap, TOTP setup, forced onboarding, role inheritance, direct permissions, presence, and account settings.</p>
-                </article>
-                <article class="feature-card reveal">
-                    <span class="feature-icon">06</span>
-                    <h3>Logs and audit trails</h3>
-                    <p>Activity logs, audit logs, failed authentication review, player movement and interaction snapshots, and panel notifications.</p>
-                </article>
-            </div>
-        </section>
-
-        <section id="gallery" class="section-shell gallery-section">
-            <div class="section-heading reveal">
-                <span class="section-kicker">Preview gallery</span>
-                <h2>See the panel before you install it.</h2>
-                <p>A quick look at the dashboards, management pages, live tools, and theme work included with Obsisphere.</p>
-            </div>
-            <div class="shot-rail reveal">
-                <button class="shot-nav" type="button" data-shot-prev aria-label="Previous screenshot">&lsaquo;</button>
-                <figure class="shot-frame">
-                    <img data-shot-image src="1.jpg" alt="Obsisphere product screenshot preview">
-                    <figcaption>
-                        <strong data-shot-title>Dashboard, console, and server control</strong>
-                        <span data-shot-caption>Realtime status cards, graphs, and the admin console in one view.</span>
-                    </figcaption>
-                </figure>
-                <button class="shot-nav" type="button" data-shot-next aria-label="Next screenshot">&rsaquo;</button>
-            </div>
-            <div class="shot-dots" aria-label="Screenshot selector">
-                <button type="button" class="active" data-shot-dot="0">1</button>
-                <button type="button" data-shot-dot="1">2</button>
-                <button type="button" data-shot-dot="2">3</button>
-                <button type="button" data-shot-dot="3">4</button>
-                <button type="button" data-shot-dot="4">5</button>
-            </div>
-        </section>
-
-        <section id="timeline" class="section-shell split-section">
-            <div class="section-heading sticky-heading reveal">
-                <span class="section-kicker">Feature history</span>
-                <h2>From core panel to serious admin suite.</h2>
-                <p>Obsisphere started as a control panel and grew into a full admin workspace with account security, detailed roles, logs, and live server tools.</p>
-            </div>
-            <div class="timeline">
-                <article class="timeline-item reveal">
-                    <span>Phase 1</span>
-                    <h3>Core panel foundation</h3>
-                    <p>Dashboard, file manager, players, plugins, worlds, live map, inventory, scheduler, x-ray watch, console, logs, themes, and responsive layout.</p>
-                </article>
-                <article class="timeline-item reveal">
-                    <span>Phase 2</span>
-                    <h3>Security, permissions, and depth</h3>
-                    <p>2FA onboarding, users and roles, command policies, database-backed logs, failed-auth tooling, LAN-only mode, i18n, and PlayHosting theme polish.</p>
-                </article>
-                <article class="timeline-item reveal">
-                    <span>Phase 3</span>
-                    <h3>Integrations and hardening</h3>
-                    <p>Planned work includes deeper deployment hardening, remote file access, broader version support, and plugin integrations.</p>
-                </article>
-            </div>
-        </section>
-
-        <section id="roadmap" class="section-shell roadmap">
-            <div class="section-heading reveal">
-                <span class="section-kicker">To be implemented</span>
-                <h2>The next layer is ecosystem power.</h2>
-            </div>
-            <div class="roadmap-grid">
-                <div class="roadmap-card reveal"><b>Deployment hardening</b><span>More protection around public deployments, request flow, file boundaries, and HTTPS-oriented setups.</span></div>
-                <div class="roadmap-card reveal"><b>Remote access</b><span>SSH and SFTP support for teams that need deeper server access from the panel.</span></div>
-                <div class="roadmap-card reveal"><b>Compatibility</b><span>Broader server-version support, with older releases like 1.16.5 as a target floor.</span></div>
-                <div class="roadmap-card reveal"><b>Integrations</b><span>WorldGuard map/claim controls, LuckPerms shortcuts, and a broader supported-integrations system.</span></div>
-                <div class="roadmap-card reveal"><b>Public API</b><span>A documented control-panel API for custom third-party frontends.</span></div>
-                <div class="roadmap-card reveal"><b>UI polish</b><span>More themes, deeper variable coverage, and QA across unusual screen sizes and high-load scenarios.</span></div>
-            </div>
-        </section>
-
-        <section class="section-shell developer-card reveal">
-            <div>
-                <span class="section-kicker">Developer</span>
-                <h2>Built for people who actually run servers.</h2>
-                <p>Obsisphere focuses on the work admins do every day: checking health, finding problems, handling players, reviewing logs, and keeping access under control.</p>
-            </div>
-            <div class="dev-profile">
-                <img src="https://mc-heads.net/avatar/_Card/128" alt="_Card Minecraft head">
-                <div>
-                    <strong>_Card</strong>
-                    <span>Developer</span>
-                </div>
-            </div>
-        </section>
-
-        <section class="section-shell final-cta reveal">
-            <h2>Ready to try Obsisphere?</h2>
-            <p>Download the plugin, read the deployment notes, and run it on a test server before trusting it with production infrastructure.</p>
-            <a class="btn btn-primary magnet" href="download.html">Download</a>
-        </section>
-    </main>
-
-    <footer class="site-footer">
-        <span>Obsisphere</span>
-        <a href="download.html">Download</a>
-    </footer>
-
-    <script src="script.js"></script>
+<header class="site-header">
+  <a class="brand" href="index.html"><span class="brand-mark">O</span><span><strong>Obsisphere</strong><small>V2 · MC Web Panel</small></span></a>
+  <nav class="nav"><a href="#product">Product</a><a href="#showcases">Demos</a><a href="features.html">Features</a><a href="technical.html">Technical</a><a href="history.html">V1 → V2</a><a href="#developer">Developer</a></nav>
+  <div class="header-actions"><a class="btn btn-ghost" href="https://github.com/Cardrhyme206113/Obsisphere">GitHub</a><a class="btn btn-primary" href="download.html">Download</a><button class="mobile-menu" aria-label="Menu">☰</button></div>
+</header>
+<main>
+<section class="wrap hero" id="top">
+  <div class="hero-copy reveal"><span class="kicker"><span class="dot"></span>Current generation · Obsisphere V2</span><h1>Run the server. Not ten admin tools.</h1><p class="lede">Obsisphere is a self-hosted Minecraft server management panel embedded directly into the plugin. Monitor performance, manage players and staff, edit files and inventories, control worlds and plugins, inspect activity, and use the live map from one responsive web interface.</p><div class="hero-actions"><a class="btn btn-primary" href="#showcases">Try the interface</a><a class="btn btn-ghost" href="features.html">Explore all features</a><a class="btn btn-ghost" href="history.html">See V1 → V2</a></div><div class="hero-facts"><div class="fact"><strong>Paper / Spigot</strong><span>1.21.4+ target</span></div><div class="fact"><strong>Embedded</strong><span>No separate panel service required</span></div><div class="fact"><strong>2FA + RBAC</strong><span>Multi-admin access controls</span></div><div class="fact"><strong>EN / TR</strong><span>Live interface language switching</span></div></div></div>
+  <div class="hero-demo reveal"><div class="demo-window"><div class="demo-chrome"><i></i><i></i><i></i><strong>REAL PANEL-DERIVED STATIC DEMO · PLACEHOLDER SERVER DATA</strong></div><iframe title="Obsisphere dashboard demo" data-lazy-src="demo.html?view=dashboard"></iframe></div><div class="float-tag one">Live dashboard</div><div class="float-tag two">Real panel markup</div><div class="float-tag three">Responsive demo</div></div>
+</section>
+<div class="wrap trust-strip reveal"><span>Monitor</span><span>Moderate</span><span>Operate</span><span>Secure</span><span>Audit</span><span>Customize</span></div>
+<section class="section" id="product"><div class="wrap"><div class="section-heading reveal"><span class="kicker">What it is</span><h2>A control panel that lives with the server.</h2><p>Obsisphere serves its own web UI and JSON APIs from the Minecraft plugin process. It is designed for people who want a serious browser-based administration workspace without handing every staff member shell access or depending on an external SaaS dashboard.</p></div><div class="what-grid"><article class="big-copy reveal"><h3>One plugin. One panel. Most day-to-day server work.</h3><p>Dashboard telemetry, file operations, player moderation, inventories, worlds, backups, plugins, scheduler, logs, audit trails, staff accounts, permissions, appearance controls and live tools sit under one permission-aware interface.</p><div class="mini-specs"><span>SELF-HOSTED</span><span>VANILLA FRONTEND</span><span>JAVA BACKEND</span><span>SQLITE LOGS</span><span>WEBGL MAP</span></div></article><div class="clean-card reveal"><div class="clean-list"><div><strong>No separate Node dashboard service</strong><span>The plugin embeds the panel server and static frontend.</span></div><div><strong>No mandatory cloud account</strong><span>Authentication, users, roles and persistence live with the server.</span></div><div><strong>No need to give moderators SSH</strong><span>Expose only the pages and actions each role is supposed to use.</span></div><div><strong>Not a fake read-only monitor</strong><span>The panel can actually perform administrative work, so access control and auditability matter.</span></div></div></div></div></div></section>
+<section class="section"><div class="wrap"><div class="section-heading reveal"><span class="kicker">Who it is for</span><h2>From private servers to multi-admin communities.</h2></div><div class="audience"><article class="audience-card reveal"><span class="num">01 · PRIVATE</span><h3>Small private servers</h3><p>Give trusted friends a clean control surface for routine work without exposing your whole machine.</p></article><article class="audience-card reveal"><span class="num">02 · COMMUNITY</span><h3>Community servers</h3><p>Moderate players, review activity, manage worlds and backups, and keep a searchable audit trail.</p></article><article class="audience-card reveal"><span class="num">03 · TEAM</span><h3>Admin teams</h3><p>Split responsibilities with inherited roles, direct permissions, console policies and live admin presence.</p></article><article class="audience-card reveal"><span class="num">04 · SELF-HOST</span><h3>Tinkerers & homelabs</h3><p>Keep the stack local, customize appearance, and inspect how the panel behaves as part of the server.</p></article></div></div></section>
+<section class="section" id="showcases"><div class="wrap"><div class="section-heading reveal"><span class="kicker">Interactive product demos</span><h2>Placeholder data. Actual Obsisphere-shaped workflows.</h2><p>The demos below are static and cannot touch a Minecraft server, but their layout and interaction patterns are derived from the current V2 panel instead of being generic marketing mockups.</p></div>
+<div class="showcase"><div class="showcase-copy reveal"><span class="kicker">01 · Operations</span><h2>Server health at a glance.</h2><p>The dashboard combines live telemetry, historical graphs, server identity, controls and the console into an operations view that can be permission-gated card by card.</p><div class="bullets"><span>Memory, CPU, players, TPS and MSPT</span><span>Loaded chunks, entity count and uptime</span><span>Server software, version, address and MOTD</span><span>Docked and fullscreen console workflows</span></div></div><div class="showcase-demo reveal"><div class="demo-toolbar"><strong>Dashboard demo</strong><div class="viewport-switch"><button class="active" data-viewport="wide">Wide</button><button data-viewport="phone">Phone</button></div></div><div class="frame-stage"><iframe title="Dashboard showcase" data-lazy-src="demo.html?view=dashboard"></iframe></div></div></div>
+<div class="showcase reverse"><div class="showcase-copy reveal"><span class="kicker">02 · Players</span><h2>Manage people, not UUID spreadsheets.</h2><p>Online and offline players live in one roster with detail views, moderation actions, recent activity and shortcuts into inventories and statistics.</p><div class="bullets"><span>Online/offline roster and search</span><span>Kick, permanent ban and temporary ban</span><span>Recent player activity snapshots</span><span>Inventory and statistics shortcuts</span></div></div><div class="showcase-demo reveal"><div class="demo-toolbar"><strong>Player management demo</strong><div class="viewport-switch"><button class="active" data-viewport="wide">Wide</button><button data-viewport="phone">Phone</button></div></div><div class="frame-stage"><iframe title="Players showcase" data-lazy-src="demo.html?view=players"></iframe></div></div></div>
+<div class="showcase"><div class="showcase-copy reveal"><span class="kicker">03 · Inventory</span><h2>Edit player state visually.</h2><p>The inventory interface works with online and offline players, includes a creative item browser, supports direct slot manipulation and is responsive enough to be useful away from a desktop.</p><div class="bullets"><span>Player inventory and armor state</span><span>Creative item picker and categories</span><span>Drag/drop style item manipulation</span><span>Online and offline inventory support</span></div></div><div class="showcase-demo reveal"><div class="demo-toolbar"><strong>Inventory demo</strong><div class="viewport-switch"><button class="active" data-viewport="wide">Wide</button><button data-viewport="phone">Phone</button></div></div><div class="frame-stage"><iframe title="Inventory showcase" data-lazy-src="demo.html?view=inventory"></iframe></div></div></div>
+<div class="showcase reverse"><div class="showcase-copy reveal"><span class="kicker">04 · Access</span><h2>Built for more than one administrator.</h2><p>V2 treats panel access as a real permission system: users, multiple roles, direct permissions, inherited permissions, page visibility, sub-feature controls and per-user or per-role console policies.</p><div class="bullets"><span>Master account and managed users</span><span>Multiple roles per user</span><span>Dependency-aware permission editor</span><span>Whitelist, blacklist, exact, regex and contains command rules</span></div></div><div class="showcase-demo reveal"><div class="demo-toolbar"><strong>Users / roles / permissions demo</strong><div class="viewport-switch"><button class="active" data-viewport="wide">Wide</button><button data-viewport="phone">Phone</button></div></div><div class="frame-stage"><iframe title="Users and roles showcase" data-lazy-src="demo.html?view=users"></iframe></div></div></div>
+<div class="showcase"><div class="showcase-copy reveal"><span class="kicker">05 · Server content</span><h2>Files, plugins and worlds without leaving the browser.</h2><p>Common server-management workflows are first-class panel pages rather than links to other tools. Use the tabs in this demo group to move between representative V2 views.</p><div class="bullets"><span>File browse/edit/upload/archive/extract flows</span><span>Installed plugin control and remote resource search</span><span>World settings, backups, restore and download</span><span>Automated backup policies and scheduler support</span></div><div class="hero-actions"><button class="btn btn-ghost" data-demo-view="files" data-target="#ops-demo">Files</button><button class="btn btn-ghost" data-demo-view="plugins" data-target="#ops-demo">Plugins</button><button class="btn btn-ghost" data-demo-view="worlds" data-target="#ops-demo">Worlds</button></div></div><div class="showcase-demo reveal"><div class="demo-toolbar"><strong>Server content demo</strong><div class="viewport-switch"><button class="active" data-viewport="wide">Wide</button><button data-viewport="phone">Phone</button></div></div><div class="frame-stage"><iframe id="ops-demo" title="Server content showcase" data-lazy-src="demo.html?view=files"></iframe></div></div></div>
+<div class="showcase reverse"><div class="showcase-copy reveal"><span class="kicker">06 · Accountability</span><h2>Know what staff and players actually did.</h2><p>Activity and audit records are database-backed, and selected events can be surfaced as realtime toast notifications. The current panel retains up to 100,000 audit and 100,000 activity records.</p><div class="bullets"><span>Panel audit trail with actor and endpoint context</span><span>Player movement, block, inventory and interaction activity</span><span>Realtime admin and player-activity toast notifications</span><span>Failed-authentication review and response tooling</span></div><div class="hero-actions"><button class="btn btn-ghost" data-demo-view="audit" data-target="#audit-demo">Audit</button><button class="btn btn-ghost" data-demo-view="stats" data-target="#audit-demo">Player stats</button></div></div><div class="showcase-demo reveal"><div class="demo-toolbar"><strong>Audit / stats demo</strong><div class="viewport-switch"><button class="active" data-viewport="wide">Wide</button><button data-viewport="phone">Phone</button></div></div><div class="frame-stage"><iframe id="audit-demo" title="Audit and statistics showcase" data-lazy-src="demo.html?view=audit"></iframe></div></div></div>
+</div></section>
+<section class="section"><div class="wrap"><div class="section-heading reveal"><span class="kicker">Live 3D map</span><h2>The visual centerpiece is a renderer, not a screenshot pretending to be one.</h2><p>V2’s map is a WebGL terrain viewer with streamed Minecraft chunk data, player tracking, entities, resource-pack-derived assets and browser caching. The website does not fake the full renderer: the interactive portfolio demos focus on standalone UI flows, while real product imagery below shows the panel itself.</p></div><div class="gallery reveal"><figure><img src="1.jpg" alt="Obsisphere real product screenshot"><figcaption>Real Obsisphere product imagery</figcaption></figure><figure><img src="2.jpg" alt="Obsisphere product screenshot"><figcaption>Management workflows</figcaption></figure><figure><img src="3.jpg" alt="Obsisphere product screenshot"><figcaption>Live tools</figcaption></figure><figure><img src="4.jpg" alt="Obsisphere product screenshot"><figcaption>Admin tooling</figcaption></figure><figure><img src="5.jpg" alt="Obsisphere product screenshot"><figcaption>Themes and utilities</figcaption></figure></div></div></section>
+<section class="section"><div class="wrap"><div class="section-heading reveal"><span class="kicker">Product generations</span><h2>V1 built the panel. V2 turns it into the full product.</h2></div><div class="product-grid"><article class="product-card reveal"><span class="version-pill">OBSISPHERE V1 · LEGACY</span><h3>V1</h3><p>The original generation established the core panel: dashboard, file manager, players, plugins, worlds, live map, inventories, scheduler, X-Ray Watch, console, logs, themes and responsive layout.</p><div class="mini-specs"><span>CORE PANEL</span><span>LIVE TOOLS</span><span>FILES</span><span>WORLDS</span><span>PLUGINS</span></div><div class="hero-actions"><a class="btn btn-ghost" href="history.html#v1">See V1 history</a></div></article><article class="product-card current reveal"><span class="version-pill">OBSISPHERE V2 · CURRENT</span><h3>V2</h3><p>The current generation adds the deeper account/security model, roles and permission inheritance, database-backed activity, richer players and statistics, server chat, the modern 3D map stack, global appearance, mobile shell work and current performance hardening.</p><div class="mini-specs"><span>2FA</span><span>RBAC</span><span>SQLITE LOGS</span><span>3D MAP</span><span>MOBILE</span><span>REALTIME ACTIVITY</span></div><div class="hero-actions"><a class="btn btn-primary" href="features.html">Explore V2</a></div></article></div></div></section>
+<section class="section"><div class="wrap"><div class="section-heading reveal"><span class="kicker">Capability map</span><h2>27 major feature areas, without pretending six cards are the whole product.</h2><p>The complete source-based feature inventory lives on a dedicated page. These are the major capability families.</p></div><div class="feature-preview reveal"><article class="feature-card"><span>01</span><h3>Operate</h3><p>Dashboard, console, scheduler, server controls and live status.</p></article><article class="feature-card"><span>02</span><h3>Manage content</h3><p>Files, plugins, worlds, backups, settings and policies.</p></article><article class="feature-card"><span>03</span><h3>Manage players</h3><p>Players, bans, whitelist, ops, stats and inventories.</p></article><article class="feature-card"><span>04</span><h3>See the server</h3><p>Live 3D map, X-Ray Watch, server chat and activity history.</p></article><article class="feature-card"><span>05</span><h3>Control access</h3><p>Authentication, 2FA, users, roles, permissions and failed-auth review.</p></article><article class="feature-card"><span>06</span><h3>Customize & ship</h3><p>Themes, backgrounds, i18n, responsive UI, persistence and build modes.</p></article></div><div class="hero-actions" style="margin-top:18px"><a class="btn btn-primary" href="features.html">Browse all 27 areas / 365 items</a></div></div></section>
+<section class="section"><div class="wrap"><div class="section-heading reveal"><span class="kicker">Technical architecture</span><h2>A Minecraft plugin on one side. A real web application on the other.</h2><p>Obsisphere is intentionally fairly boring in its core stack: Java on the server, an embedded HTTP layer, vanilla web technologies in the browser, database-backed logs, and specialized WebGL/worker code where the product actually needs it.</p></div><div class="architecture"><div class="arch-diagram reveal"><div class="arch-stack"><div class="arch-node"><strong>Browser</strong><span>HTML · CSS · JavaScript · WebGL · IndexedDB</span></div><div class="arch-arrow">↕ HTTP / JSON / SSE</div><div class="arch-node"><strong>Obsisphere embedded panel server</strong><span>Static assets · API handlers · sessions · permissions</span></div><div class="arch-arrow">↕</div><div class="arch-split"><div class="arch-node"><strong>Persistence</strong><span>SQLite · YAML · JSON</span></div><div class="arch-node"><strong>Minecraft server</strong><span>Bukkit / Paper APIs</span></div></div></div></div><div class="tech-cards reveal"><article class="tech-card"><h3>Backend</h3><p>Java plugin code, embedded HTTP serving, bounded worker execution and Minecraft-thread handoff for server-affecting work.</p></article><article class="tech-card"><h3>Frontend</h3><p>Vanilla HTML/CSS/JS with responsive layouts, themes, modals, toasts, dashboards and specialized live pages.</p></article><article class="tech-card"><h3>Map</h3><p>WebGL terrain rendering, workers, chunk streaming, resource-pack-derived assets and persistent IndexedDB client caching.</p></article><article class="tech-card"><h3>Security</h3><p>TOTP 2FA, PBKDF2 password hashing, CSRF checks, sessions, failed-auth controls and granular permission enforcement.</p></article><article class="tech-card"><h3>Persistence</h3><p>Database-backed audit/activity history plus server configuration, policies, schedules and other durable panel state.</p></article><article class="tech-card"><h3>Build modes</h3><p><span class="mono">AUTH_REQUIRED</span>, <span class="mono">DEV_NO_AUTH</span> and <span class="mono">DEV_NO_AUTH_LAN</span>.</p></article></div></div><div class="hero-actions" style="margin-top:18px"><a class="btn btn-ghost" href="technical.html">Open technical deep dive</a></div></div></section>
+<section class="section"><div class="wrap"><div class="metric-grid reveal"><div class="metric-box"><strong>27</strong><span>major documented feature areas</span></div><div class="metric-box"><strong>100K</strong><span>audit records retained</span></div><div class="metric-box"><strong>100K</strong><span>player activity records retained</span></div><div class="metric-box"><strong>3</strong><span>build security modes</span></div><div class="metric-box"><strong>2</strong><span>included interface languages</span></div></div></div></section>
+<section class="section"><div class="wrap"><div class="section-heading reveal"><span class="kicker">Development history</span><h2>V1 → V2, without fake patch-number lore.</h2></div><div class="history-preview"><div class="history-rail reveal"><div class="active">2026 · V2 CURRENT</div><div>V2 EXPANSION</div><div>V1 CORE</div><div>JAN 2026 · REPO</div></div><article class="history-story reveal"><span class="version-pill">CURRENT GENERATION</span><h3>Obsisphere V2</h3><p>V2 is the current panel generation: expanded authentication and staff access, richer logs and notifications, more complete player management, current mobile/theme work, server chat, global backgrounds, and the modern live-map/cache architecture. Performance hardening is the main unfinished engineering pass.</p><div class="hero-actions"><a class="btn btn-primary" href="history.html">Full V1 → V2 history</a></div></article></div></div></section>
+<section class="section" id="developer"><div class="wrap developer"><article class="developer-card reveal"><span class="kicker">Developer</span><h2>Built by Card / _Card.</h2><p class="lede">Obsisphere is developed as a hands-on Minecraft server administration project: part backend plugin, part web application, part rendering experiment, and increasingly a full multi-admin control surface.</p><div class="dev-id"><div class="dev-avatar">C</div><div><strong>Card / _Card</strong><span>Developer · GitHub: Cardrhyme206113</span></div></div><div class="hero-actions"><a class="btn btn-ghost" href="https://github.com/Cardrhyme206113">GitHub profile</a><a class="btn btn-ghost" href="https://github.com/Cardrhyme206113/Obsisphere">Repository</a></div></article><article class="roadmap-card reveal"><span class="kicker">What is still being worked on</span><h3 style="font-size:1.7rem;margin-top:18px">The current pass is mostly depth and efficiency.</h3><div class="roadmap-list"><div><strong>Performance hardening</strong><span>Map polling, main-thread work, SSE/journal behavior and general panel lifecycle efficiency.</span></div><div><strong>Deployment hardening</strong><span>Transport, rate limiting and safer public-facing deployment options.</span></div><div><strong>Integrations</strong><span>Future plugin-aware workflows such as WorldGuard and LuckPerms.</span></div><div><strong>Compatibility & polish</strong><span>Broader version support, themes and long-tail responsive QA.</span></div></div></article></div></section>
+<section class="section"><div class="wrap cta reveal"><div><span class="kicker">Try it</span><h2>See what V2 can actually do.</h2></div><div><p>Browse the full feature inventory, inspect the technical architecture, compare V1 and V2, or install a build on a test server.</p><div class="hero-actions"><a class="btn btn-primary" href="download.html">Download / install</a><a class="btn btn-ghost" href="features.html">All features</a><a class="btn btn-ghost" href="https://github.com/Cardrhyme206113/Obsisphere">Source repository</a></div></div></div></section>
+</main>
+<footer class="footer"><div class="wrap footer-inner"><span>Obsisphere V2 · Minecraft server management web UI</span><div class="footer-links"><a href="features.html">Features</a><a href="technical.html">Technical</a><a href="history.html">History</a><a href="download.html">Download</a><a href="https://github.com/Cardrhyme206113/Obsisphere">GitHub</a></div></div></footer>
+<script src="script.js"></script>
 </body>
 </html>
